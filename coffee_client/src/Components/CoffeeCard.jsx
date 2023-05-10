@@ -48,7 +48,7 @@ const CoffeeCard = ({coffee,coffees,setCoffees}) => {
           <div className="card-actions justify-end">
           <div className="btn-group btn-group-vertical p-5 text-white">
   <Link to={`/coffeeDetails/${_id}`}><button  className="px-4 py-2 w-20 text-white rounded-md bg-slate-800 hover:bg-slate-700 ">Details</button></Link>
-  <Link><button className="px-4 py-2 text-blue-800 rounded-md w-20 bg-gray-900 hover:bg-gray-700 my-2">Update</button></Link>
+  <Link to={`/updateCoffee/${_id}`}><button className="px-4 py-2 text-blue-800 rounded-md w-20 bg-gray-900 hover:bg-gray-700 my-2">Update</button></Link>
  <Link> <button onClick={() => handleDelete(_id)} className="px-4 py-2 w-20 text-red-800 rounded-md bg-zinc-900 hover:bg-zinc-700">Delete</button></Link>
 </div>
           </div>
