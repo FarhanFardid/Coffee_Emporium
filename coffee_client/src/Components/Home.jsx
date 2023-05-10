@@ -1,3 +1,4 @@
+import { useLoaderData } from "react-router-dom";
 import bannerImg from "../assets/images/Banner-1.png";
 import cup_1 from "../assets/images/cup-1.png";
 import cup_2 from "../assets/images/cup-2.png";
@@ -11,8 +12,11 @@ import icon_1 from '../assets/images/icon-1.png';
 import icon_2 from '../assets/images/icon-2.png';
 import icon_3 from '../assets/images/icon-3.png';
 import icon_4 from '../assets/images/icon-4.png';
+import CoffeeCard from "./CoffeeCard";
 
 const Home = () => {
+  const coffees = useLoaderData();
+  console.log(coffees);
   const bannerStyle = {
     backgroundImage: `url(${bannerImg})`,
     backgroundRepeat: "no-repeat",
@@ -75,6 +79,15 @@ const Home = () => {
 </div>
 
     </div>
+ </section>
+ <section className='container-fluid'>
+  <h5 className="text-3xl font-bold p-2 text-center">Our Popular Products</h5>
+  <div className='row grid grid-rows-2 grid-cols-2 p-2 gap-2 bg-gray-400'>
+    {
+      coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee} > </CoffeeCard>)
+    }
+  </div>
+
  </section>
       <section className='container-fluid '>
       <h4 className="font-semibold text-3xl text-center p-3 bg-slate-900 text-red-700">
