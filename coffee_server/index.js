@@ -44,6 +44,26 @@ app.get('/coffee/:id', async(req,res)=> {
     res.send(result);
 })
 
+app.put('/coffee/:id', async(req,res) => {
+    const id = req.params.id;
+    const coffee = req.body;
+    const filter = {_id: new ObjectId(id)}
+    const options = {upsert: true}
+    const updateCoffee = {
+        $set:{
+            name: coffee.name,
+            supplier: coffee.supplier,
+            price: coffee.price,
+            category: coffee.category,
+            details: coffee.details,
+            photo_url: coffee.photo_url,
+        }
+
+    }
+    const result = await coffeeCollection.updateOne(filter,updateCoffee,options)
+    res.send(result);
+})
+
    app.post('/coffee', async(req,res) =>{
     const newCoffee = req.body;
     console.log("post api is hitting")
