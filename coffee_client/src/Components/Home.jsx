@@ -33,7 +33,7 @@ const Home = () => {
           </h4>
           <p className="p-4 text-slate-300">
             {" "}
-            It's coffee time - Sip & Savor - Relaxation in every sip! Get the
+            It is coffee time - Sip & Savor - Relaxation in every sip! Get the
             nostalgia back!! Your companion of every moment!!! Enjoy the
             beautiful moments and make them memorable.
           </p>

@@ -17,11 +17,13 @@ const UpdateCoffee = () => {
         const photo_url= form.photo_url.value;
         const coffee = {name,supplier,price,category,details,photo_url};
         console.log(coffee);
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        // fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-server-ten.vercel.app/coffee/${_id}`, {
           method: "PUT",
           headers:{
             "content-type" : 'application/json'
           },
+          mode: 'cors',
           body:JSON.stringify(coffee)
         })
         .then (res => res.json())
@@ -35,6 +37,7 @@ const UpdateCoffee = () => {
             icon: 'success',
             confirmButtonText: 'Cool'
           })
+          form.reset()
         }
       })
       }

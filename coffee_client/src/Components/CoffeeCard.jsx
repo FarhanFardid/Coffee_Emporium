@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
@@ -17,7 +17,8 @@ const CoffeeCard = ({coffee,coffees,setCoffees}) => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-    fetch(`http://localhost:5000/coffee/${id}`, {
+    fetch(`https://coffee-server-ten.vercel.app/coffee/${id}`, {
+    // fetch(`http://localhost:5000/coffee/${id}`, {
         method:"DELETE",
      
     })
