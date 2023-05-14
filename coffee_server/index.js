@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 
+
 app.get('/', (req,res) => {
     res.send("Coffee server is running......");
 })
@@ -56,11 +57,13 @@ app.put('/coffee/:id', async(req,res) => {
             price: coffee.price,
             category: coffee.category,
             details: coffee.details,
-            photo_url: coffee.photo_url,
-        }
+            photo_url: coffee.photo_url
+        },
 
-    }
+    };
     const result = await coffeeCollection.updateOne(filter,updateCoffee,options)
+    res.header("Access-Control-Allow-Origin", "*");
+    console.log(result)
     res.send(result);
 })
 
