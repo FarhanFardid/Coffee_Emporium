@@ -19,11 +19,11 @@ const UpdateCoffee = () => {
         console.log(coffee);
         // fetch(`http://localhost:5000/coffee/${_id}`, {
         fetch(`https://coffee-server-ten.vercel.app/coffee/${_id}`, {
-          method: "PUT",
+          method: "PATCH",
           headers:{
             "content-type" : 'application/json'
           },
-          mode: 'cors',
+          
           body:JSON.stringify(coffee)
         })
         .then (res => res.json())

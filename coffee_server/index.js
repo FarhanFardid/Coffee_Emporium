@@ -45,11 +45,12 @@ app.get('/coffee/:id', async(req,res)=> {
     res.send(result);
 })
 
-app.put('/coffee/:id', async(req,res) => {
+// app.put('/coffee/:id', async(req,res) => {
+app.patch('/coffee/:id', async(req,res) => {
     const id = req.params.id;
     const coffee = req.body;
     const filter = {_id: new ObjectId(id)}
-    const options = {upsert: true}
+    // const options = {upsert: true}
     const updateCoffee = {
         $set:{
             name: coffee.name,
@@ -61,8 +62,9 @@ app.put('/coffee/:id', async(req,res) => {
         },
 
     };
-    const result = await coffeeCollection.updateOne(filter,updateCoffee,options)
-    res.header("Access-Control-Allow-Origin", "*");
+    // const result = await coffeeCollection.updateOne(filter,updateCoffee,options)
+    const result = await coffeeCollection.updateOne(filter,updateCoffee)
+    
     console.log(result)
     res.send(result);
 })
