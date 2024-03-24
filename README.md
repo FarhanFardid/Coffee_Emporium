@@ -1,5 +1,5 @@
 
-Coffee Emporium
+# Coffee Emporium
 
 
 Coffee Emporium is a full-stack project aimed at managing a coffee inventory. It allows users to add new coffee items, update existing items, remove items from the database, and display the inventory in the user interface.
